@@ -13,7 +13,8 @@ cp ./payloads/zshrc $HOME/.zshrc
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install homebrew packages
-brew install gh
+brew install go-task/tap/go-task
+brew install gh go-task node@20
 
 # setup gh cli
 gh auth login
