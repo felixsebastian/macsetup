@@ -5,6 +5,7 @@ mkdir -p $HOME/Code
 cp -r ./payloads/bin $HOME/Code
 cp -r ./payloads/env $HOME/Code
 cp ./payloads/zshrc $HOME/.zshrc
+cp ./payloads/gitconfig $HOME/.gitconfig
 
 # intstall homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
