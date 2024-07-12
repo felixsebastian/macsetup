@@ -7,3 +7,4 @@ path+=("$HOME/Code/bin")
 path+=("/opt/homebrew/opt/node@20/bin")
 export GOPATH="$HOME/Code/go"
 path+=("$GOPATH/bin")
+cd $HOME/Code
