@@ -16,6 +16,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # install homebrew packages
 brew install go-task/tap/go-task
 brew install gh go-task node@20
+brew install python
 
 # setup gh cli
 gh auth login
