@@ -5,6 +5,7 @@ mkdir -p $HOME/Code
 cp -r ./payloads/bin $HOME/Code
 cp -r ./payloads/env $HOME/Code
 cp ./payloads/zshrc $HOME/.zshrc
+source $HOME/.zshrc
 cp ./payloads/gitconfig $HOME/.gitconfig
 
 # intstall homebrew
@@ -17,6 +18,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 brew install go-task/tap/go-task
 brew install gh go-task node@20
 brew install python
+
+# install poetry
+python -m venv $HOME/Code/poetry
+$HOME/Code/poetry/bin/pip install -U pip setuptools
+$HOME/Code/poetry/bin/pip install poetry
 
 # setup gh cli
 gh auth login

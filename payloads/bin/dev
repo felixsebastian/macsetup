@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# USAGE
+# crl NAMED_OPTION=foo ANOTHER_NAMED_OPTION=foo some_task some other commands
+# 'other commands' will be passed as CLI_ARGS
+
+num_options=1
+
+for arg in "$@"; do
+  if [[ "$arg" =~ ^[A-Z_]+=.+$ ]]; then
+    ((num_options=num_options+1))
+  fi
+done
+
+# get path to this script
+
+PROJECT=$1
+task --dir "${HOME}/Code/${PROJECT}" ${@:2:num_options-1} ${@:num_options+1:1} -- "${@:num_options+2}"

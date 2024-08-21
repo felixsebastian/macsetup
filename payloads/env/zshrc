@@ -1,10 +1,17 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
+ZSH_THEME="ys"
 plugins=(git docker docker-compose nvm)
 source $ZSH/oh-my-zsh.sh
 path+=("/opt/homebrew/bin")
-path+=("$HOME/Code/bin")
+path+=("$HOME/Code/macsetup/payloads/bin")
 path+=("/opt/homebrew/opt/node@20/bin")
+path+=("/opt/homebrew/opt/python@3.12/libexec/bin")
+alias poetry="$HOME/Code/poetry/bin/poetry"
+poetry config virtualenvs.in-project true
 export GOPATH="$HOME/Code/go"
 path+=("$GOPATH/bin")
-cd $HOME/Code
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+path+=("$ANDROID_HOME/emulator")
+path+=("$ANDROID_HOME/platform-tools")
+alias xpd="dev perion"
