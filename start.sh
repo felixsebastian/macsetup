@@ -9,15 +9,15 @@ mkdir -p $HOME/Code
 
 # intstall homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-PATH=$PATH:/opt/homebrew/bin
+$BREW=/opt/homebrew/bin
 
 # install homebrew packages
-brew install go-task/tap/go-task
-brew install gh go-task node@20
-brew install python
+$BREW/brew install go-task/tap/go-task
+$BREW/brew install gh go-task node@20
+$BREW/brew install python
 
 # setup gh cli
-gh auth login
+$BREW/gh auth login
 
 # copy files
 gh repo clone felixsebastian/macsetup $HOME/Code
