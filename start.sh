@@ -5,11 +5,14 @@ SCRIPT_DIR=$(dirname "$0")
 # make code dir
 mkdir -p $HOME/Code
 
+# setup gh cli
+gh auth login
+
 # copy files
-cp -r $SCRIPT_DIR $HOME/Code/macsetup
-cp $SCRIPT_DIR/payloads/zshrc $HOME/.zshrc
-source $HOME/.zshrc
 cp $SCRIPT_DIR/payloads/gitconfig $HOME/.gitconfig
+cp $SCRIPT_DIR/payloads/zshrc $HOME/.zshrc
+gh repo clone felixsebastian/macsetup $HOME/Code
+source $HOME/.zshrc
 
 # intstall homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -26,6 +29,3 @@ brew install python
 python -m venv $HOME/Code/poetry
 $HOME/Code/poetry/bin/pip install -U pip setuptools
 $HOME/Code/poetry/bin/pip install poetry
-
-# setup gh cli
-gh auth login
