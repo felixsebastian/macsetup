@@ -18,9 +18,9 @@ brew install python
 gh auth login
 
 # copy files
-cp $SCRIPT_DIR/payloads/gitconfig $HOME/.gitconfig
-cp $SCRIPT_DIR/payloads/zshrc $HOME/.zshrc
 gh repo clone felixsebastian/macsetup $HOME/Code
+cp $HOME/Code/macsetup/payloads/gitconfig $HOME/.gitconfig
+cp $HOME/Code/macsetup/payloads/zshrc $HOME/.zshrc
 source $HOME/.zshrc
 
 # install poetry
