@@ -6,13 +6,7 @@ SCRIPT_DIR=$(dirname "$0")
 mkdir -p $HOME/Code
 
 # setup gh cli
-gh auth login
-
-# copy files
-cp $SCRIPT_DIR/payloads/gitconfig $HOME/.gitconfig
-cp $SCRIPT_DIR/payloads/zshrc $HOME/.zshrc
-gh repo clone felixsebastian/macsetup $HOME/Code
-source $HOME/.zshrc
+/opt/homebrew/bin/gh auth login
 
 # intstall homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -24,6 +18,12 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 brew install go-task/tap/go-task
 brew install gh go-task node@20
 brew install python
+
+# copy files
+cp $SCRIPT_DIR/payloads/gitconfig $HOME/.gitconfig
+cp $SCRIPT_DIR/payloads/zshrc $HOME/.zshrc
+gh repo clone felixsebastian/macsetup $HOME/Code
+source $HOME/.zshrc
 
 # install poetry
 python -m venv $HOME/Code/poetry
