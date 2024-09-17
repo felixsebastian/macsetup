@@ -17,6 +17,7 @@ brew install gh go-task node@20
 brew install python
 
 # setup gh cli
+echo "LOGGING IN TO GITHUB"
 gh auth login
 
 # copy files
