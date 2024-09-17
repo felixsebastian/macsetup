@@ -9,7 +9,7 @@ mkdir -p $HOME/Code
 
 # intstall homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-path+=/opt/homebrew/bin
+PATH=$PATH:/opt/homebrew/bin
 
 # install homebrew packages
 brew install go-task/tap/go-task
@@ -17,7 +17,6 @@ brew install gh go-task node@20
 brew install python
 
 # setup gh cli
-echo "LOGGING IN TO GITHUB"
 gh auth login
 
 # copy files
