@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 rm -rf $HOME/Code
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 rm -rf /opt/homebrew
