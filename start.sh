@@ -20,7 +20,7 @@ $BREW/brew install python
 $BREW/gh auth login
 
 # copy files
-$BREW/gh repo clone felixsebastian/macsetup $HOME/Code
+$BREW/gh repo clone felixsebastian/macsetup $HOME/Code/macsetup
 cp $HOME/Code/macsetup/payloads/gitconfig $HOME/.gitconfig
 cp $HOME/Code/macsetup/payloads/zshrc $HOME/.zshrc
 
