@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-set -e
-
 SCRIPT_DIR=$(dirname "$0")
 
 # make code dir
@@ -9,7 +7,10 @@ mkdir -p $HOME/Code
 
 # intstall homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-path+=('/opt/homebrew/bin')
+PATH=$PATH:/opt/homebrew/bin
+
+# install oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install homebrew packages
 brew install go-task/tap/go-task
@@ -29,6 +30,4 @@ python -m venv $HOME/Code/poetry
 $HOME/Code/poetry/bin/pip install -U pip setuptools
 $HOME/Code/poetry/bin/pip install poetry
 
-# install oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 source $HOME/.zshrc
