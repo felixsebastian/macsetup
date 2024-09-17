@@ -1,12 +1,15 @@
+#!/bin/zsh
+
+SCRIPT_DIR=$(dirname "$0")
+
 # make code dir
 mkdir -p $HOME/Code
 
 # copy files
-cp -r ./payloads/bin $HOME/Code
-cp -r ./payloads/env $HOME/Code
-cp ./payloads/zshrc $HOME/.zshrc
+cp -r $SCRIPT_DIR $HOME/Code/macsetup
+cp $SCRIPT_DIR/payloads/zshrc $HOME/.zshrc
 source $HOME/.zshrc
-cp ./payloads/gitconfig $HOME/.gitconfig
+cp $SCRIPT_DIR/payloads/gitconfig $HOME/.gitconfig
 
 # intstall homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
