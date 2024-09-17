@@ -4,16 +4,21 @@ set -e
 set -x
 
 SCRIPT_DIR=$(dirname "$0")
+TEMP_DIR=$(mktemp -d)
 
 # make code dir
 mkdir -p $HOME/Code
 
 # intstall homebrew
-exec bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh -o "$TEMP_DIR/install-homebrew.sh"
+chmod +x "$TEMP_DIR/install-homebrew.sh"
+"$TEMP_DIR/install-homebrew.sh"
 path+=/opt/homebrew/bin
 
 # install oh my zsh
-exec sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -o "$TEMP_DIR/install-oh-my-zsh.sh"
+chmod +x "$TEMP_DIR/install-oh-my-zsh.sh"
+"$TEMP_DIR/install-oh-my-zsh.sh"
 
 # install homebrew packages
 brew install go-task/tap/go-task
