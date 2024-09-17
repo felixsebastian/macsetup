@@ -1,16 +1,18 @@
 #!/bin/zsh
 
+set -e
+
 SCRIPT_DIR=$(dirname "$0")
 
 # make code dir
 mkdir -p $HOME/Code
 
 # intstall homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null 2>&1
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 path+=/opt/homebrew/bin
 
 # install oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" > /dev/null 2>&1
+curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
 
 # install homebrew packages
 brew install go-task/tap/go-task
