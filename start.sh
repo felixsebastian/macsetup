@@ -5,9 +5,6 @@ SCRIPT_DIR=$(dirname "$0")
 # make code dir
 mkdir -p $HOME/Code
 
-# setup gh cli
-/opt/homebrew/bin/gh auth login
-
 # intstall homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -18,6 +15,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 brew install go-task/tap/go-task
 brew install gh go-task node@20
 brew install python
+
+# setup gh cli
+/opt/homebrew/bin/gh auth login
 
 # copy files
 cp $SCRIPT_DIR/payloads/gitconfig $HOME/.gitconfig
