@@ -11,9 +11,6 @@ mkdir -p $HOME/Code
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 path+=('/opt/homebrew/bin')
 
-# install oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # install homebrew packages
 brew install go-task/tap/go-task
 brew install gh go-task node@20
@@ -26,9 +23,12 @@ gh auth login
 gh repo clone felixsebastian/macsetup $HOME/Code
 cp $HOME/Code/macsetup/payloads/gitconfig $HOME/.gitconfig
 cp $HOME/Code/macsetup/payloads/zshrc $HOME/.zshrc
-source $HOME/.zshrc
 
 # install poetry
 python -m venv $HOME/Code/poetry
 $HOME/Code/poetry/bin/pip install -U pip setuptools
 $HOME/Code/poetry/bin/pip install poetry
+
+# install oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+source $HOME/.zshrc
