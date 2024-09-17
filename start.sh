@@ -9,7 +9,7 @@ mkdir -p $HOME/Code
 
 # intstall homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-$BREW=/opt/homebrew/bin
+BREW=/opt/homebrew/bin
 
 # install homebrew packages
 $BREW/brew install go-task/tap/go-task
