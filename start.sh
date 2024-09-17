@@ -6,11 +6,11 @@ SCRIPT_DIR=$(dirname "$0")
 mkdir -p $HOME/Code
 
 # intstall homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-PATH=$PATH:/opt/homebrew/bin
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null 2>&1
+path+=/opt/homebrew/bin
 
 # install oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" > /dev/null 2>&1
 
 # install homebrew packages
 brew install go-task/tap/go-task
