@@ -11,9 +11,6 @@ mkdir -p $HOME/Code
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 BREW=/opt/homebrew/bin
 
-# install oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # install homebrew packages
 $BREW/brew install go-task/tap/go-task
 $BREW/brew install gh go-task node@20
@@ -26,3 +23,6 @@ $BREW/gh auth login
 $BREW/gh repo clone felixsebastian/macsetup $HOME/Code/macsetup
 cp $HOME/Code/macsetup/payloads/gitconfig $HOME/.gitconfig
 cp $HOME/Code/macsetup/payloads/zshrc $HOME/.zshrc
+
+# install oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
