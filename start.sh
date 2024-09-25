@@ -14,7 +14,9 @@ BREW=/opt/homebrew/bin
 # install homebrew packages
 $BREW/brew install go-task/tap/go-task
 $BREW/brew install gh go-task node@20
+$BREW/brew install --cask warp
 $BREW/brew install python
+$BREW/brew install awscli
 
 # setup gh cli
 $BREW/gh auth login
